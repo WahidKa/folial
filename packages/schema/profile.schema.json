@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://folial.dev/schemas/profile.schema.json",
+  "title": "folial profile",
+  "description": "The contract between the CV parser, the AI enhancement pass, and every theme component.",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string" },
+    "name": { "type": "string" },
+    "defaultLocale": { "enum": ["en", "fr", "ar"] },
+    "title": { "$ref": "#/$defs/localizedString" },
+    "summary": { "$ref": "#/$defs/localizedString" },
+    "email": { "type": "string", "format": "email" },
+    "phone": { "type": "string" },
+    "location": { "type": "string" },
+    "themeId": { "type": "string", "default": "minimalist" },
+    "languages": { "type": "array", "items": { "$ref": "#/$defs/language" } },
+    "socials": { "type": "array", "items": { "$ref": "#/$defs/social" } },
+    "experiences": { "type": "array", "items": { "$ref": "#/$defs/experience" } },
+    "education": { "type": "array", "items": { "$ref": "#/$defs/education" } },
+    "projects": { "type": "array", "items": { "$ref": "#/$defs/project" } },
+    "skills": { "type": "array", "items": { "$ref": "#/$defs/skill" } }
+  },
+  "required": ["id", "name", "defaultLocale"],
+  "$defs": {
+    "localizedString": {
+      "type": "object",
+      "description": "Content per locale. At least one locale must be present; the parser always fills the detected source locale.",
+      "properties": {
+        "en": { "type": "string" },
+        "fr": { "type": "string" },
+        "ar": { "type": "string" }
+      },
+      "additionalProperties": false,
+      "minProperties": 1
+    },
+    "date": {
+      "type": "string",
+      "pattern": "^(\\d{4})(-(0[1-9]|1[0-2]))?$"
+    },
+    "language": {
+      "type": "object",
+      "properties": {
+        "name": { "$ref": "#/$defs/localizedString" },
+        "level": { "type": "string" }
+      }
+    },
+    "social": {
+      "type": "object",
+      "properties": {
+        "platform": { "type": "string" },
+        "url": { "type": "string", "format": "uri" }
+      },
+      "required": ["platform", "url"]
+    },
+    "experience": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "company": { "type": "string" },
+        "role": { "$ref": "#/$defs/localizedString" },
+        "startDate": { "$ref": "#/$defs/date" },
+        "endDate": { "$ref": "#/$defs/date" },
+        "present": { "type": "boolean" },
+        "bullets": { "type": "array", "items": { "$ref": "#/$defs/localizedString" } }
+      },
+      "required": ["id"]
+    },
+    "education": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "school": { "type": "string" },
+        "degree": { "type": "string" },
+        "startDate": { "$ref": "#/$defs/date" },
+        "endDate": { "$ref": "#/$defs/date" },
+        "present": { "type": "boolean" }
+      },
+      "required": ["id"]
+    },
+    "project": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "$ref": "#/$defs/localizedString" },
+        "description": { "$ref": "#/$defs/localizedString" },
+        "techStack": { "type": "array", "items": { "type": "string" } },
+        "url": { "type": "string", "format": "uri" },
+        "imageUrl": { "type": "string", "format": "uri" },
+        "featured": { "type": "boolean" },
+        "source": { "enum": ["manual", "github"] }
+      },
+      "required": ["id"]
+    },
+    "skill": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "category": { "type": "string" }
+      },
+      "required": ["id"]
+    }
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "id": "sample-001",
+  "name": "Salma El Fassi",
+  "defaultLocale": "en",
+  "title": {
+    "en": "Full-stack developer",
+    "fr": "Développeuse full-stack",
+    "ar": "مطورة ويب متكاملة"
+  },
+  "summary": {
+    "en": "Full-stack developer with 4 years of experience building web apps with React and Python. Based in Casablanca, working across French, Arabic and English teams.",
+    "fr": "Développeuse full-stack avec 4 ans d'expérience dans la création d'applications web avec React et Python. Basée à Casablanca, habituée aux équipes francophones, arabophones et anglophones.",
+    "ar": "مطورة ويب متكاملة بخبرة أربع سنوات في بناء تطبيقات الويب باستخدام React وPython. مقيمة في الدار البيضاء، وتعمل مع فرق ناطقة بالفرنسية والعربية والإنجليزية."
+  },
+  "email": "salma.elfassi@example.com",
+  "phone": "+212 6 61 23 45 67",
+  "location": "Casablanca, Morocco",
+  "themeId": "minimalist",
+  "languages": [
+    { "name": { "en": "Arabic", "fr": "Arabe", "ar": "العربية" }, "level": "Native" },
+    { "name": { "en": "French", "fr": "Français", "ar": "الفرنسية" }, "level": "Fluent" },
+    { "name": { "en": "English", "fr": "Anglais", "ar": "الإنجليزية" }, "level": "Professional" }
+  ],
+  "socials": [
+    { "platform": "github", "url": "https://github.com/salmaelfassi" },
+    { "platform": "linkedin", "url": "https://www.linkedin.com/in/salmaelfassi" }
+  ],
+  "experiences": [
+    {
+      "id": "exp-001",
+      "company": "Atlas Digital",
+      "role": {
+        "en": "Senior full-stack developer",
+        "fr": "Développeuse full-stack senior",
+        "ar": "مطورة ويب متكاملة أولى"
+      },
+      "startDate": "2023-02",
+      "present": true,
+      "bullets": [
+        {
+          "en": "Led migration of a legacy PHP monolith to Next.js + FastAPI, cutting page load time by 60%.",
+          "fr": "Piloté la migration d'un monolithe PHP vers Next.js + FastAPI, réduisant le temps de chargement de 60 %.",
+          "ar": "قدت عملية ترحيل نظام PHP قديم إلى Next.js وFastAPI، مما خفض زمن تحميل الصفحات بنسبة 60٪."
+        },
+        {
+          "en": "Built an Arabic/French bilingual admin dashboard used by 40+ operators daily.",
+          "fr": "Conçu un tableau de bord bilingue arabe/français utilisé quotidiennement par plus de 40 opérateurs.",
+          "ar": "بنيت لوحة تحكم ثنائية اللغة (العربية/الفرنسية) يستخدمها أكثر من 40 مشغلاً يومياً."
+        }
+      ]
+    },
+    {
+      "id": "exp-002",
+      "company": "CasaSoft",
+      "role": {
+        "en": "Frontend developer",
+        "fr": "Développeuse frontend",
+        "ar": "مطورة واجهات أمامية"
+      },
+      "startDate": "2021-06",
+      "endDate": "2023-01",
+      "bullets": [
+        {
+          "en": "Shipped RTL-first design system components adopted by 3 product teams.",
+          "fr": "Livré des composants RTL-first adoptés par 3 équipes produit.",
+          "ar": "طورت مكونات تصميم تدعم RTL أولاً واعتمدتها 3 فرق منتجات."
+        }
+      ]
+    }
+  ],
+  "education": [
+    {
+      "id": "edu-001",
+      "school": "Université Hassan II, Casablanca",
+      "degree": "Master in Computer Science",
+      "startDate": "2019",
+      "endDate": "2021"
+    }
+  ],
+  "projects": [
+    {
+      "id": "prj-001",
+      "title": {
+        "en": "folial",
+        "fr": "folial",
+        "ar": "folial"
+      },
+      "description": {
+        "en": "Open-source CV-to-portfolio generator with Arabic/French/English and RTL support.",
+        "fr": "Générateur open-source de portfolio à partir d'un CV, avec support arabe/français/anglais et RTL.",
+        "ar": "مولد محافظ أعمال مفتوح المصدر من السيرة الذاتية، يدعم العربية والفرنسية والإنجليزية واتجاه RTL."
+      },
+      "techStack": ["Next.js", "FastAPI", "Tailwind CSS"],
+      "url": "https://github.com/WahidKa/folial",
+      "featured": true,
+      "source": "github"
+    }
+  ],
+  "skills": [
+    { "id": "sk-001", "name": "TypeScript", "category": "Languages" },
+    { "id": "sk-002", "name": "Python", "category": "Languages" },
+    { "id": "sk-003", "name": "Next.js", "category": "Frameworks" },
+    { "id": "sk-004", "name": "FastAPI", "category": "Frameworks" },
+    { "id": "sk-005", "name": "RTL/i18n", "category": "Specialties" }
+  ]
+}
