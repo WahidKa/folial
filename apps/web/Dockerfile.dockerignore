@@ -1,0 +1,6 @@
+node_modules
+.next
+.git
+apps/parser/.venv
+apps/parser/tests/fixtures
+*.log

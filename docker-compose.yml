@@ -1,0 +1,25 @@
+services:
+  parser:
+    build:
+      context: .
+      dockerfile: apps/parser/Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      CORS_ORIGINS: http://localhost:3000
+      # Phase 2 placeholder: groq (default) or ollama (self-host fallback).
+      LLM_PROVIDER: ${LLM_PROVIDER:-groq}
+
+  web:
+    build:
+      context: .
+      dockerfile: apps/web/Dockerfile
+      args:
+        NEXT_PUBLIC_PARSER_URL: ${NEXT_PUBLIC_PARSER_URL:-http://localhost:8000}
+    ports:
+      - "3000:3000"
+    environment:
+      # Phase 1 placeholder: SQLite (self-host) or Supabase Postgres (hosted).
+      DATABASE_URL: ${DATABASE_URL:-file:./dev.db}
+    depends_on:
+      - parser
