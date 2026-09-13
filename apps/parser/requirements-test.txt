@@ -1,0 +1,5 @@
+# Fixture-generation only. Never installed in the prod image.
+-r requirements.txt
+reportlab==4.*
+arabic-reshaper==3.*
+python-bidi==0.6.*
