@@ -23,6 +23,7 @@ venv/
 # misc
 .DS_Store
 *.pem
+*.log
 debug.log
 npm-debug.log*
 pnpm-debug.log*

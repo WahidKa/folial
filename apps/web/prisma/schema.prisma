@@ -1,0 +1,20 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// Document-store row. The profile JSON (packages/schema/profile.schema.json)
+// is the source of truth; columns mirror only what we query on.
+model Portfolio {
+  id        String   @id @default(cuid())
+  slug      String   @unique
+  name      String
+  themeId   String   @default("minimalist")
+  data      Json
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}

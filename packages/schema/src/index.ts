@@ -72,9 +72,14 @@ export interface Profile {
 }
 
 import sampleProfileJson from "../sample.json";
+import profileSchemaJson from "../profile.schema.json";
 
 /** Canonical sample profile. Typed `satisfies Profile` so drift breaks the build. */
 export const sampleProfile = sampleProfileJson as Profile;
+
+/** The raw JSON Schema contract — the single source of truth, also used
+ *  for runtime validation (ajv) in apps/web. */
+export const profileSchema = profileSchemaJson;
 
 export function localizedText(
   value: LocalizedString | undefined,

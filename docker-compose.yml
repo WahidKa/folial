@@ -19,7 +19,12 @@ services:
     ports:
       - "3000:3000"
     environment:
-      # Phase 1 placeholder: SQLite (self-host) or Supabase Postgres (hosted).
-      DATABASE_URL: ${DATABASE_URL:-file:./dev.db}
+      # Container path (volume-backed). Local dev uses apps/web/.env instead.
+      DATABASE_URL: ${DATABASE_URL:-file:/data/dev.db}
+    volumes:
+      - folial-data:/data
     depends_on:
       - parser
+
+volumes:
+  folial-data:

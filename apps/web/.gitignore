@@ -41,3 +41,8 @@ e2e-*.log
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# sqlite (local dev database, never commit)
+*.db
+*.db-journal
+/prisma/dev.db
