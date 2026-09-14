@@ -350,6 +350,14 @@ export default function Home() {
               >
                 Start over
               </button>
+              {slug && (
+                <a
+                  href={`/api/portfolios/${slug}/export`}
+                  className="rounded-md border border-zinc-300 px-4 py-1 text-sm font-medium text-zinc-700"
+                >
+                  Export HTML
+                </a>
+              )}
               <button
                 onClick={() => void onSave()}
                 disabled={status.kind === "busy"}
